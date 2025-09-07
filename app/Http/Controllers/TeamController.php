@@ -13,14 +13,4 @@ class TeamController extends Controller
         ];
         return view('teams.index', compact('teams', 'leagues'));
     }
-
-    public function stadium(Team $team) {
-        $stadiums= $team->stadiums;
-        return view('teams.stadium', compact('team', 'stadiums'));
-    }
-
-    public function player(Team $team) {
-        $players = $team->players;
-        return view('teams.player', compact('team', 'players'));
-    }
 }

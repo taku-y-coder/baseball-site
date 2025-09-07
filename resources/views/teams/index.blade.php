@@ -23,13 +23,13 @@
                             @foreach ($team->stadiums as $studium)
                                 <p class="card-text">
                                     本拠地：
-                                    <a href="{{ route('teams.stadium', $team->id) }}">
+                                    <a href="{{ route('stadiums.index', $team->id) }}">
                                         {{ $studium->name }}
                                     </a>
                                 </p>
                             @endforeach
                             <p class="card-text">
-                                <a href="{{ route('teams.player', $team->id) }}">
+                                <a href="{{ route('players.index', $team->id) }}">
                                     所属選手
                                 </a>
                             </p>
