@@ -29,7 +29,7 @@ class UpdateTeamLogoSeeder extends Seeder
         ];
 
         foreach ($logo as $name => $filename) {
-            Team::where('team_name', $name)->update(['logo_filename' => $filename]);
+            Team::where('name', $name)->update(['logo_filename' => $filename]);
         }
     }
 }

@@ -1,29 +1,28 @@
 <?php
-namespace Database\Seeders\Teams;
+namespace Database\Seeders\Runners\Stadiums;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TigersPlayersTableSeeder extends Seeder
+class StadiumsTableSeeder extends Seeder
 {
     public function run()
     {
-        $file = fopen(database_path('seeders/data/tigers_players.csv'), 'r');
+        $file = fopen(database_path('seeders/data/stadiums/stadiums.csv'), 'r');
 
         // 1行目をヘッダーとして読み飛ばす
         $header = fgetcsv($file);
 
         while (($record = fgetcsv($file)) !== false) {
-            [$name, $position, $height, $weight, $team_id, $uniform_number] = $record;
+            [$name, $postcode, $address, $opened_at, $team_id] = $record;
 
             // 既存があれば更新、なければ挿入
-            DB::table('players')->updateOrInsert(
+            DB::table('stadiums')->updateOrInsert(
                 ['name' => $name, 'team_id' => $team_id], // 検索条件
                 [
-                    'position' => $position,
-                    'height' => $height,
-                    'weight' => $weight,
-                    'uniform_number' => $uniform_number,
+                    'postcode' => $postcode,
+                    'address' => $address,
+                    'opened_at' => $opened_at,
                 ]
             );
         }

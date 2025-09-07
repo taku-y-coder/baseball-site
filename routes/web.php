@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
 
 Route::get('teams/index', [TeamController::class, 'index'])->name('teams.index');
-Route::get('teams/{team}', [TeamController::class, 'show'])->name('teams.show');
+Route::get('teams/{team}/player', [TeamController::class, 'player'])->name('teams.player');
+Route::get('teams/{team}/stadium', [TeamController::class, 'stadium'])->name('teams.stadium');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

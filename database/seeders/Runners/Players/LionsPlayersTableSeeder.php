@@ -1,14 +1,14 @@
 <?php
-namespace Database\Seeders\Teams;
+namespace Database\Seeders\Runners\Players;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MarinesPlayersTableSeeder extends Seeder
+class LionsPlayersTableSeeder extends Seeder
 {
     public function run()
     {
-        $file = fopen(database_path('seeders/data/marines_players.csv'), 'r');
+        $file = fopen(database_path('seeders/data/players/lions_players.csv'), 'r');
 
         // 1行目をヘッダーとして読み飛ばす
         $header = fgetcsv($file);

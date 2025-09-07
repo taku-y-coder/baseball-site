@@ -1,5 +1,5 @@
 <?php
-namespace Database\Seeders\Teams;
+namespace Database\Seeders\Runners\Players;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -8,7 +8,7 @@ class CarpPlayersTableSeeder extends Seeder
 {
     public function run()
     {
-        $file = fopen(database_path('seeders/data/carp_players.csv'), 'r');
+        $file = fopen(database_path('seeders/data/players/carp_players.csv'), 'r');
 
         // 1行目をヘッダーとして読み飛ばす
         $header = fgetcsv($file);

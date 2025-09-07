@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', $team->team_name, '選手一覧')
+@section('title', $team->name, '選手一覧')
 
 @section('content')
-<h2 class="mb-4">{{ $team->team_name }}の選手一覧</h2>
+<h2 class="mb-4">{{ $team->name }}の選手一覧</h2>
 <div class="row g-4">
     @foreach ($players as $player)
         <div class="col-12 col-sm-6 col-md-4">

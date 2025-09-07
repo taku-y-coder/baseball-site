@@ -6,12 +6,21 @@ use App\Models\Team;
 class TeamController extends Controller
 {
     public function index() {
-        $teams = Team::all();
-        return view('teams.index', compact('teams'));
+        $teams = Team::with('stadiums')->get();
+        $leagues = [
+            'cl' => 'CENTRAL LEAGUE',
+            'pl' => 'PACIFIC LEAGUE',
+        ];
+        return view('teams.index', compact('teams', 'leagues'));
     }
 
-    public function show(Team $team) {
+    public function stadium(Team $team) {
+        $stadiums= $team->stadiums;
+        return view('teams.stadium', compact('team', 'stadiums'));
+    }
+
+    public function player(Team $team) {
         $players = $team->players;
-        return view('teams.show', compact('team', 'players'));
+        return view('teams.player', compact('team', 'players'));
     }
 }
