@@ -18,7 +18,7 @@ services:
     container_name: app-container
     volumes:
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini
-      - ./app:/var/www
+      - ./:/var/www
     ports:
       - '8080:80'
     depends_on:
