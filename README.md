@@ -13,7 +13,10 @@
 - Seederにて選手の追加、削除が可能（追加は各チームごとにcsvファイルを使用）
 
 ## 使用技術
-- PHP 8.3
+- PHP 8.3 + Apache
 - Laravel 11
-- MySQL 8.0
-- Bootstrap 5
+- MySQL 8
+- Tailwind CSS
+- phpMyAdmin
+- Docker / Docker Compose
+- Apache mod_rewrite 設定済み
